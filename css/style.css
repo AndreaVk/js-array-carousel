@@ -3,69 +3,95 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.container {
+body {
+    font-family: "Open Sans", sans-serif;
     height: 100vh;
-    background-color:white;
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
+    align-items: center;
+    background-color: lightgrey;
 }
-
+.container {
+    display: flex;
+    width: 80%;
+    height: 60%;
+}
+.img-grande {
+    width: 80%;
+    height: 100%;
+}
 .slider {
-    width: 55%;
-    height: 60vh;
-    background-color:red;
-}
-
-.leftimage {
-    width: 15%;
-    height: 60vh;
-    background-color: black;
+    width: 20%;
+    height: 100%;
+    position: relative;
 }
 .item {
     height: 60vh;
     display: none;
+    position: relative;
 }
+.active {
+    display: block;
+}
+.description {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    color: white;
+    text-align: right;
+    font-weight: bold;
+}
+
 .item img {
-    height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.leftimage {
-    position: relative;
+.thumb-container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+    /* overflow: hidden; */
+}
+
+.thumb {
+    width: 100%;
+    height: calc(100% / 5);
+    opacity: 0.6;
+    filter: blur(3px);
+    -webkit-filter: blur(2px);
+}
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .prev,
 .next {
-    color: white;
     position: absolute;
-    left: 43%;
-    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
     width: 30px;
     height: 30px;
-    background-color: darkslategrey;
     border-radius: 50%;
     line-height: 30px;
-    cursor: pointer;
+    text-align: center;
+    margin: 5px 0;
 }
-
 .prev {
-    top: 1%;
+    top: 0;
 }
-
 .next {
-    bottom: 1%;
+    bottom: 0;
 }
 
-.leftimage .item {
-    height: calc(60vh / 5);
-    object-fit: cover;
-    display: block;
+.thumb.active {
+    opacity: 1;
+    border-radius: 25px;
+    filter: blur(0);
+    -webkit-filter: blur(0);
 }
-
-.active {
-    display: block;
-} 
